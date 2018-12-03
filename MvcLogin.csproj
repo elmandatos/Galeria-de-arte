@@ -88,6 +88,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\ProyectoFinal.mdf" />
+    <Content Include="App_Data\ProyectoFinal_log.ldf">
+      <DependentUpon>ProyectoFinal.mdf</DependentUpon>
+    </Content>
     <Content Include="Empleados.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Inicio.aspx" />
@@ -182,7 +186,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>

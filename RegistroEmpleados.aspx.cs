@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -11,6 +12,16 @@ namespace Inicio
     {
         
         String Nombre, Fecha, Curp, sexo, user, pass, correo;
+        SqlConnection conn = new SqlConnection(
+            new SqlConnectionStringBuilder()
+            {
+                DataSource = "localhost",
+                InitialCatalog = "ProyectoFinal",
+                UserID = "",
+                Password = ""
+            }.ConnectionString
+        );
+            
         protected void Page_Load(object sender, EventArgs e)
         {
             HttpCookie ckNombre;
