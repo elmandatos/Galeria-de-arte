@@ -12,7 +12,7 @@ namespace Inicio
     {
         
         String Nombre, Fecha, Curp, sexo, user, pass, correo;
-        SqlConnection conn = new SqlConnection(
+        SqlConnection _conn = new SqlConnection(
             new SqlConnectionStringBuilder()
             {
                 DataSource = "localhost",
@@ -122,7 +122,16 @@ namespace Inicio
             else
                 sexo = RbtnMujer.Text;
 
-
+            try
+            {
+                _conn.Open();
+                _conn.Close();
+            }
+            catch(Exception ex)
+            {
+                LblErrorDB.Text = "error db" + ex.Message;
+            }
+            /*
             Session["Nombre"] = Nombre;
             Session["Fecha"] = Fecha;
             Session["Curp"] = Curp;
@@ -130,7 +139,7 @@ namespace Inicio
             Session["pass"] = pass;
             Session["correo"] = correo;
             Session["user"] = user;
-
+            /*/
             this.Response.Redirect("Empleados.aspx");
 
 

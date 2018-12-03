@@ -214,6 +214,7 @@
             </p>
             <asp:ValidationSummary ID="VsErrores" runat="server" ForeColor="#CC0000" HeaderText="Error" />
             <br />
+            <asp:Label ID="LblErrorDB" runat="server"></asp:Label>
             <br />
             <asp:RegularExpressionValidator ID="RevCorreo" runat="server" ControlToValidate="TxbCorreo" ErrorMessage="El correo ingresado esta mal escrito o es invalido " ForeColor="White" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
             <br />
