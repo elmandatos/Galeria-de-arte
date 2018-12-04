@@ -44,7 +44,7 @@ namespace Inicio
                     TxbFecha.Text = (myReader["FechaNac"].ToString());
                     TxbCorreo.Text = (myReader["Correo"].ToString());
                     TxSexo.Text = (myReader["Sexo"].ToString());
-                    TxbUser.Text = (myReader["UserEmp"].ToString());
+                    TxbId.Text = (myReader["Id"].ToString());
                 }
 
                 LblMensaje.Text = "Empleado encontrado...!";
@@ -64,7 +64,6 @@ namespace Inicio
             this.Correoemp = Convert.ToString(TxbCorreo.Text);
             this.Curpemp = Convert.ToString(TxbCurp.Text);
             this.Sexoemp = Convert.ToString(TxSexo.Text);
-            this.Useremp = Convert.ToString(TxbUser.Text);
 
             String OrderSql;
             SqlConnection conn = new SqlConnection();
@@ -101,7 +100,7 @@ namespace Inicio
             {
                 conn.Open();
                 //Insertar datos en la tabla
-                OrderSql = string.Format("DELETE FROM Empleado WHERE IdEmp={0}", Idemp);
+                OrderSql = string.Format("DELETE FROM Empleado WHERE Id={0}", Idemp);
                 SqlCommand cmd = new SqlCommand(OrderSql, conn);
                 cmd.ExecuteNonQuery();
                 LblMensaje.Text = "Empleado Eliminado...!";

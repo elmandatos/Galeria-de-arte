@@ -66,7 +66,7 @@ namespace Inicio
             {
                 Conn.Open();
                 //Insertar datos en la tabla
-                OrderSql = string.Format("Update Venta SET Material = '{0}', Ancho = '{1}', Alto= '{2}', Afinado= '{3}', Acabado= '{4}', Cantidad ='{5}', Fecha)= '{6}' WHERE IdVenta ={7}", Material, Ancho, Alto, Afinado, Acabado, Cantidad, Fecha, IdVenta);
+                OrderSql = string.Format("Update Venta SET Material = '{0}', Ancho = '{1}', Alto= '{2}', Afinado= '{3}', Acabado= '{4}', Cantidad ='{5}', Fecha= '{6}' WHERE IdVenta ={7}", Material, Ancho, Alto, Afinado, Acabado, Cantidad, Fecha, IdVenta);
                 SqlCommand cmd = new SqlCommand(OrderSql, Conn);
                 cmd.ExecuteNonQuery();
                 LblMensaje.Text = "Venta Actualizada..!!";

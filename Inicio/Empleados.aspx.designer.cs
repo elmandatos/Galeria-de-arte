@@ -148,13 +148,13 @@ namespace Inicio {
         protected global::System.Web.UI.WebControls.Label LblUser;
         
         /// <summary>
-        /// Control TxbUser.
+        /// Control TxbId.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxbUser;
+        protected global::System.Web.UI.WebControls.TextBox TxbId;
         
         /// <summary>
         /// Control BtnActualizar.

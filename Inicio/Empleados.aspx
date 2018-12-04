@@ -182,10 +182,10 @@
     </tr>
     <tr>
         <td class="auto-style1">
-            <asp:Label ID="LblUser" runat="server" Text="Usuario:"></asp:Label>
+            <asp:Label ID="LblUser" runat="server" Text="Id Usuario:"></asp:Label>
         </td>
         <td class="auto-style1">
-             <asp:TextBox ID="TxbUser" runat="server" ></asp:TextBox>
+             <asp:TextBox ID="TxbId" runat="server" ></asp:TextBox>
         </td>
     </tr>
 </table>

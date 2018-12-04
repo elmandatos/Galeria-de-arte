@@ -85,13 +85,18 @@
     #HTxbPassword {
         height: 22px;
     }
+    .auto-style1 {
+        margin-left: 40px;
+    }
 </style>
 <body>
     <form id="form1" runat="server">
     <header>
             <figure>
+                <p class="auto-style1">
                 <br>
                 <img src="img/logo.png" alt="Alternate Text" />
+                </p>
             </figure>
             <nav>
 
@@ -104,9 +109,9 @@
         <article>
             <h2>Iniciar Sesión</h2>
             <img src="img/u.png" alt="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="TxbUser" runat="server" placeholder="Usuario" ValidationGroup="A" OnTextChanged="TxbUser_TextChanged"></asp:TextBox>
+            <asp:TextBox ID="TxbUser" runat="server" placeholder="Usuario" ValidationGroup="A" OnTextChanged="TxbUser_TextChanged" Height="19px"></asp:TextBox>
             <strong>*</strong>
-            <asp:RequiredFieldValidator ID="RfvUser" runat="server" ControlToValidate="TxbUser" ErrorMessage="Tiene que ingresar su usuario" ValidationGroup="A"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ID="RfvUser" runat="server" ControlToValidate="TxbUser" ErrorMessage="Tiene que ingresar su Id de usuario" ValidationGroup="A"></asp:RequiredFieldValidator>
             <br><br>
             <img src="img/p.png" alt="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="TxbPassword" runat="server" placeholder="Contraseña" OnTextChanged="TxbPassword_TextChanged1" TextMode="Password"></asp:TextBox>
