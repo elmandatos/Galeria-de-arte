@@ -18,16 +18,19 @@ namespace Inicio
         }
         protected void TxbUser_TextChanged(object sender, EventArgs e)
         {
-            this.user = Convert.ToString(TxbUser.Text);
+           
         }
 
         protected void TxbPassword_TextChanged1(object sender, EventArgs e)
         {
-            this.pass = Convert.ToString(TxbPassword.Text);
+            
         }
 
         protected void BtnIniciar_Click(object sender, EventArgs e)
         {
+            user = Convert.ToString(TxbUser.Text);
+            Int32 id = Convert.ToInt32(user);
+            this.pass = Convert.ToString(TxbPassword.Text);
             String OrderSql;
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString =
@@ -37,7 +40,7 @@ namespace Inicio
             {
                 conn.Open();
                 //Insertar datos en la tabla
-                OrderSql = string.Format("SELECT * FROM Empleado WHERE Id={0}", user);
+                OrderSql = string.Format("SELECT * FROM Login WHERE id = {0}",id);
                 SqlCommand cmd = new SqlCommand(OrderSql, conn);
                 cmd.ExecuteNonQuery();
                 SqlDataReader myReader = null;
@@ -45,8 +48,8 @@ namespace Inicio
 
                 while (myReader.Read())
                 {
-                    user1 = (myReader["Id"].ToString());
-                    pass1 = (myReader["PasswdEmp"].ToString());
+                    user1 = (myReader["id"].ToString());
+                    pass1 = (myReader["password"].ToString());
                 }
                 if (user == user1 )
                 {
