@@ -88,20 +88,24 @@ namespace Inicio
         }
         protected void BtnEliminar_Click(object sender, EventArgs e)
         {
-            SqlConnection Conn;
+            this.Idemp = Convert.ToInt16(TbxIdEmp.Text);
+
+         
             String OrderSql;
-            Conn = new SqlConnection();
-            //Conectar a la base de datos no  a la table
-            Conn.ConnectionString = "Data Source=(localdb)\\ProjectsV13;Initial Catalog=ProyectoFinal;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString =
+            "Data Source=(LocalDB)\\MSSQLLocalDB;" +
+            "AttachDbFilename=|DataDirectory|\\ProyectoFinal.mdf;";
+
             try
             {
-                Conn.Open();
+                conn.Open();
                 //Insertar datos en la tabla
                 OrderSql = string.Format("DELETE FROM Empleado WHERE IdEmp={0}", Idemp);
-                SqlCommand cmd = new SqlCommand(OrderSql, Conn);
+                SqlCommand cmd = new SqlCommand(OrderSql, conn);
                 cmd.ExecuteNonQuery();
                 LblMensaje.Text = "Empleado Eliminado...!";
-                Conn.Close();
+                conn.Close();
 
             }
             catch (Exception ex)
