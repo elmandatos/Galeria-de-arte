@@ -1,0 +1,27 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Compiled and minified CSS -->
+    <link type="text/css" rel="stylesheet" href="~/css/materialize.min.css" media="screen,projection" />
+    <link rel="stylesheet" href="~/css/materialize-icons.woff2">
+    <title></title>
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <form class="" action="Check" method="post">
+            <input type="email" name="email" placeholder="Correo">
+            <input type="password" name="password" placeholder="Password">
+            <input type="submit" class="btn" value="Entrar">
+            <asp:TextBox ID="TxbPassword" runat="server" placeholder="Contraseña" OnTextChanged="TxbPassword_TextChanged1" TextMode="Password"></asp:TextBox>
+        </form>
+    </div>
+    <!-- Compiled and minified JavaScript -->
+    <script src="~/js/jquery-3.3.1.min.js"></script>
+    <script src="~/js/materialize.min.js"></script>
+    <script>M.AutoInit();</script>
+</body>
+</html>
