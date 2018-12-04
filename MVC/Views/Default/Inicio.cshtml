@@ -12,12 +12,13 @@
 <body>
     <div class="container">
         <h1>Login</h1>
-        <form class="" action="Check" method="post">
-            <input type="email" name="email" placeholder="Correo">
+        <form class=""  method="post">
+            <input type="text" name="user" placeholder="User">
             <input type="password" name="password" placeholder="Password">
             <input type="submit" class="btn" value="Entrar">
-            <asp:TextBox ID="TxbPassword" runat="server" placeholder="Contraseña" OnTextChanged="TxbPassword_TextChanged1" TextMode="Password"></asp:TextBox>
         </form>
+        <p>@ViewBag.User</p>
+        <p>@ViewBag.Password</p>
     </div>
     <!-- Compiled and minified JavaScript -->
     <script src="~/js/jquery-3.3.1.min.js"></script>

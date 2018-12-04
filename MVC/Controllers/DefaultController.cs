@@ -14,11 +14,17 @@ namespace MVC.Models
             return View("Inicio");
         }
 
-        // GET: Default
-        public ActionResult Check()
+        // POST: Default
+        [HttpPost]
+        public ActionResult Index(String user, String password)
         {
-
-            return View("Result");
+            var request = new User();
+            request.user = user;
+            request.password = password;
+            String resultado = request.Check();
+            if (resultado == "Result")
+                ViewBag.User = user;
+            return View(resultado);
         }
     }
 }
