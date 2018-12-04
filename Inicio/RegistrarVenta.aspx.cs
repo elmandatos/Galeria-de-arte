@@ -78,16 +78,18 @@ namespace Inicio
             else
                 Acabado = RbtnFotografico.Text;
 
-            SqlConnection Conn;
+
             String OrderSql;
-            Conn = new SqlConnection();
-            //Conectar a la base de datos no  a la table
-            Conn.ConnectionString = "Data Source=(localdb)\\ProjectsV13;Initial Catalog=ProyectoFinal;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"; 
+            SqlConnection Conn = new SqlConnection();
+
+            Conn.ConnectionString =
+            "Data Source=(LocalDB)\\MSSQLLocalDB;" +
+            "AttachDbFilename=|DataDirectory|\\ProyectoFinal.mdf;";
             try
             {
                 Conn.Open();
                 //Insertar datos en la tabla
-                OrderSql = string.Format("INSERT INTO Venta (Material, Alto, Afinado, Acabado, Cantidad, FechaEnt, Ancho ) VALUES ('{0}','{1}','{2}','{3}','{4}','{5}','{6}')", Material, Alto, Afinado, Acabado, Cantidad, FechaEnt, Ancho);
+                OrderSql = string.Format("INSERT INTO Venta (Material, Alto, Afinado, Acabado, Cantidad, Fecha, Ancho ) VALUES ('{0}','{1}','{2}','{3}','{4}','{5}','{6}')", Material, Alto, Afinado, Acabado, Cantidad, FechaEnt, Ancho);
                 SqlCommand cmd = new SqlCommand(OrderSql, Conn);
                 cmd.ExecuteNonQuery();
                 Conn.Close();

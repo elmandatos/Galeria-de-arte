@@ -16,60 +16,18 @@ namespace Inicio
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //TxbMaterial.Enabled = false;
-            //TxbFecha.Enabled = false;
-            //TxbAncho.Enabled = false;
-            //TxbAlto.Enabled = false;
-            //TxbAfinado.Enabled = false;
-            //TxbAcabado.Enabled = false;
-            //TxbCantidad.Enabled = false;
         }
-        protected void TxbAlto_TextChanged(object sender, EventArgs e)
-        {
-            this.Alto = Convert.ToString(TxbAlto.Text);
-        }
-
-        protected void TxbAfinado_TextChanged(object sender, EventArgs e)
-        {
-            this.Afinado = Convert.ToString(TxbAfinado.Text);
-        }
-
-        protected void TxbAcabado_TextChanged(object sender, EventArgs e)
-        {
-            this.Acabado = Convert.ToString(TxbAcabado.Text);
-        }
-
-        protected void TxbIdVenta_TextChanged(object sender, EventArgs e)
-        {
-            this.IdVenta = Convert.ToInt16(TxbIdVenta.Text);
-        }
-
-        protected void TxbCantidad_TextChanged(object sender, EventArgs e)
-        {
-            this.Cantidad = Convert.ToString(TxbCantidad.Text);
-        }
-
-        protected void TxbFecha_TextChanged(object sender, EventArgs e)
-        {
-            this.Fecha = Convert.ToString(TxbFecha.Text);
-        }
-
-        protected void TxbAncho_TextChanged(object sender, EventArgs e)
-        {
-            this.Ancho = Convert.ToString(TxbAncho.Text);
-        }
-
-        protected void TxbMaterial_TextChanged(object sender, EventArgs e)
-        {
-            this.Material = Convert.ToString(TxbMaterial.Text);
-        }
+    
         protected void BtnEliminar_Click(object sender, EventArgs e)
         {
-            SqlConnection Conn;
+            this.IdVenta = Convert.ToInt16(TxbIdVenta.Text);
+
             String OrderSql;
-            Conn = new SqlConnection();
-            //Conectar a la base de datos no  a la table
-            Conn.ConnectionString = "Data Source=(localdb)MSSQLLocalDB\\ProjectsV13;Initial Catalog=ProyectoFinal;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            SqlConnection Conn = new SqlConnection();
+
+            Conn.ConnectionString =
+            "Data Source=(LocalDB)\\MSSQLLocalDB;" +
+            "AttachDbFilename=|DataDirectory|\\ProyectoFinal.mdf;";
             try
             {
                 Conn.Open();
@@ -89,11 +47,21 @@ namespace Inicio
 
         protected void BtnActualizar_Click(object sender, EventArgs e)
         {
-            SqlConnection Conn;
+            this.IdVenta = Convert.ToInt16(TxbIdVenta.Text);
+
+            this.Alto = Convert.ToString(TxbAlto.Text);
+            this.Afinado = Convert.ToString(TxbAfinado.Text);
+            this.Acabado = Convert.ToString(TxbAcabado.Text);
+            this.Cantidad = Convert.ToString(TxbCantidad.Text);
+            this.Fecha = Convert.ToString(TxbFecha.Text);
+            this.Ancho = Convert.ToString(TxbAncho.Text);
+            this.Material = Convert.ToString(TxbMaterial.Text);
             String OrderSql;
-            Conn = new SqlConnection();
-            //Conectar a la base de datos no  a la table
-            Conn.ConnectionString = "Data Source=(localdb)\\ProjectsV13;Initial Catalog=ProyectoFinal;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            SqlConnection Conn = new SqlConnection();
+
+            Conn.ConnectionString =
+            "Data Source=(LocalDB)\\MSSQLLocalDB;" +
+            "AttachDbFilename=|DataDirectory|\\ProyectoFinal.mdf;";
             try
             {
                 Conn.Open();
@@ -112,19 +80,14 @@ namespace Inicio
 
         protected void BtnBuscar_Click(object sender, EventArgs e)
         {
-           // TxbMaterial.Enabled = true;
-            //TxbFecha.Enabled = true;
-           // TxbAncho.Enabled = true;
-           // TxbAlto.Enabled = true;
-           // TxbAfinado.Enabled = true;
-           // TxbAcabado.Enabled = true;
-           // TxbCantidad.Enabled = true;
+            this.IdVenta = Convert.ToInt16(TxbIdVenta.Text);
 
-            SqlConnection Conn;
             String OrderSql;
-            Conn = new SqlConnection();
-            //Conectar a la base de datos no  a la table
-            Conn.ConnectionString = "Data Source=(localdb)\\ProjectsV13;Initial Catalog=ProyectoFinal;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            SqlConnection Conn = new SqlConnection();
+
+            Conn.ConnectionString =
+            "Data Source=(LocalDB)\\MSSQLLocalDB;" +
+            "AttachDbFilename=|DataDirectory|\\ProyectoFinal.mdf;";
             try
             {
                 Conn.Open();
@@ -142,14 +105,14 @@ namespace Inicio
                     TxbAfinado.Text = (myReader["Afinado"].ToString());
                     TxbAcabado.Text = (myReader["Acabado"].ToString());
                     TxbCantidad.Text = (myReader["Cantidad"].ToString());
-                    TxbFecha.Text = (myReader["FechaEnt"].ToString());
+                    TxbFecha.Text = (myReader["Fecha"].ToString());
                     TxbAncho.Text = (myReader["Ancho"].ToString());
                 }
                 LblMensaje.Text = "Venta encontrada...!";
                 Conn.Close();
 
             }
-            catch (Exception ex)
+                catch (Exception ex)
             {
                 LblMensaje.Text = "Errot al Buscar..!!" + ex.Message;
             }

@@ -70,11 +70,13 @@ namespace Inicio
                 Acabado = RbtnFotografico.Text;
 
 
-            SqlConnection Conn;
+
             String OrderSql;
-            Conn = new SqlConnection();
-            //Conectar a la base de datos no  a la table
-            Conn.ConnectionString = "Data Source=(localdb)\\ProjectsV13;Initial Catalog=ProyectoFinal;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            SqlConnection Conn = new SqlConnection();
+
+            Conn.ConnectionString =
+            "Data Source=(LocalDB)\\MSSQLLocalDB;" +
+            "AttachDbFilename=|DataDirectory|\\ProyectoFinal.mdf;";
             try
             {
                 Conn.Open();

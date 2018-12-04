@@ -113,7 +113,7 @@
                         <a href="RegistroEmpleados.aspx" >Registrar Empleado</a>
                     </li>
                     <li>
-                        <a href="#" class="activo">RegistrarVenta</a>
+                        <a href="MenuVenta.aspx">RegistrarVenta</a>
                     </li>
                      <li>
                         <a href="Ventas.aspx">Ventas</a>
@@ -137,7 +137,7 @@
             <p>
                 <asp:Button ID="BtnBuscar" runat="server" OnClick="BtnBuscar_Click" Text="Buscar" />
 &nbsp;&nbsp;
-                <asp:TextBox ID="TxbIdVenta" runat="server" OnTextChanged="TxbIdVenta_TextChanged"></asp:TextBox>
+                <asp:TextBox ID="TxbIdVenta" runat="server" ></asp:TextBox>
 &nbsp;&nbsp;&nbsp;
                 <asp:Label ID="LblMensaje" runat="server"></asp:Label>
             </p>
@@ -145,31 +145,31 @@
   <tr>
     <td><asp:Label ID="LblMat" runat="server" Text="Material: "></asp:Label></td>
     <td>
-        <asp:TextBox ID="TxbMaterial" runat="server" OnTextChanged="TxbMaterial_TextChanged"></asp:TextBox>
+        <asp:TextBox ID="TxbMaterial" runat="server" ></asp:TextBox>
       </td>
   </tr>
   <tr>
     <td><asp:Label ID="LblA" runat="server" Text="Ancho: "></asp:Label></td>
     <td>
-        <asp:TextBox ID="TxbAncho" runat="server" Height="16px" OnTextChanged="TxbAncho_TextChanged"></asp:TextBox>
+        <asp:TextBox ID="TxbAncho" runat="server" Height="16px"></asp:TextBox>
       </td>
   </tr>
   <tr>
     <td><asp:Label ID="LblAL" runat="server" Text="Alto: "></asp:Label></td>
     <td> 
-        <asp:TextBox ID="TxbAlto" runat="server" OnTextChanged="TxbAlto_TextChanged"></asp:TextBox>
+        <asp:TextBox ID="TxbAlto" runat="server"></asp:TextBox>
       </td>
   </tr>
   <tr>
     <td><asp:Label ID="Label7" runat="server" Text="Afinado: "></asp:Label></td>
     <td> 
-        <asp:TextBox ID="TxbAfinado" runat="server" OnTextChanged="TxbAfinado_TextChanged"></asp:TextBox>
+        <asp:TextBox ID="TxbAfinado" runat="server"></asp:TextBox>
       </td>
   </tr>
   <tr>
     <td><asp:Label ID="Label9" runat="server" Text="Acabado: "></asp:Label></td>
     <td> 
-        <asp:TextBox ID="TxbAcabado" runat="server" OnTextChanged="TxbAcabado_TextChanged"></asp:TextBox>
+        <asp:TextBox ID="TxbAcabado" runat="server" ></asp:TextBox>
       </td>
   </tr>
 
@@ -177,13 +177,13 @@
   <tr>
     <td><asp:Label ID="LblCant" runat="server" Text="Cantidad: "></asp:Label></td>
     <td> 
-        <asp:TextBox ID="TxbCantidad" runat="server" OnTextChanged="TxbCantidad_TextChanged"></asp:TextBox>
+        <asp:TextBox ID="TxbCantidad" runat="server"></asp:TextBox>
       </td>
   </tr>
   <tr>
     <td> <asp:Label ID="Label13" runat="server" Text="Fecha de entrega: "></asp:Label></td>
      <td> 
-         <asp:TextBox ID="TxbFecha" runat="server" OnTextChanged="TxbFecha_TextChanged"></asp:TextBox>
+         <asp:TextBox ID="TxbFecha" runat="server"></asp:TextBox>
       </td>
   </tr>
 </table>
